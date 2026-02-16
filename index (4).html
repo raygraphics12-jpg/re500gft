@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Exclusive Reward</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+}
+
+body{
+background:#f2f2f2;
+color:#111;
+}
+
+.wrapper{
+max-width:420px;
+margin:auto;
+padding:24px;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:flex-start;
+}
+
+.logo-img{
+width:90px;
+height:90px;
+border-radius:50%;
+object-fit:cover;
+display:block;
+margin:0 auto 10px;
+}
+
+/* Logo */
+
+.logo{
+text-align:center;
+margin-bottom:14px;
+}
+
+.logo-circle{
+width:90px;
+height:90px;
+border-radius:50%;
+background:#000;
+margin:0 auto 10px;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#fff;
+font-weight:700;
+font-size:28px;
+}
+
+.sublogo{
+letter-spacing:3px;
+font-size:13px;
+color:#888;
+}
+
+/* Progress */
+
+.progress-row{
+display:flex;
+justify-content:space-between;
+margin-top:25px;
+font-size:15px;
+color:#777;
+}
+
+.progress-bar{
+height:10px;
+background:#ddd;
+border-radius:10px;
+margin-top:10px;
+overflow:hidden;
+}
+
+.progress-fill{
+height:100%;
+width:0%;
+background:#111;
+border-radius:10px;
+transition:width .4s ease;
+}
+
+/* Headings */
+
+h1{
+font-size:28px;
+margin:30px 0 20px;
+line-height:1.25;
+}
+
+/* Options */
+
+.option{
+background:#eaeaea;
+border-radius:18px;
+padding:20px;
+margin-bottom:16px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-size:18px;
+cursor:pointer;
+border:2px solid transparent;
+}
+
+.option.active{
+border-color:#111;
+background:#fff;
+}
+
+.arrow{
+font-size:22px;
+opacity:.4;
+}
+
+/* Loader */
+
+.center{
+text-align:center;
+margin-top:80px;
+}
+
+.loader{
+width:70px;
+height:70px;
+border-radius:50%;
+border:6px solid #ddd;
+border-top:6px solid #111;
+margin:0 auto 20px;
+animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+to{transform:rotate(360deg);}
+}
+
+/* Eligible */
+
+.check{
+width:90px;
+height:90px;
+border-radius:50%;
+background:#dff5ec;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:0 auto 20px;
+font-size:40px;
+color:#18a870;
+}
+
+.green{
+color:#18a870;
+}
+
+/* Card */
+
+.card{
+background:#e9e9e9;
+border-radius:20px;
+padding:22px;
+margin:20px 0;
+}
+
+.step{
+display:flex;
+gap:14px;
+margin-bottom:18px;
+}
+
+.icon{
+width:46px;
+height:46px;
+border-radius:50%;
+background:#fff;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:20px;
+}
+
+/* Button */
+
+.btn{
+background:#000;
+color:#fff;
+border:none;
+border-radius:30px;
+padding:20px;
+font-size:20px;
+width:100%;
+cursor:pointer;
+margin-top:20px;
+}
+
+/* Hide */
+
+.screen{
+display:none;
+}
+
+.show{
+display:block;
+}
+
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+
+<!-- LOGO -->
+<div class="logo">
+<img src="https://be.skrolin.com/images/revicon.png" class="logo-img">
+<div class="sublogo">EXCLUSIVE REWARD</div>
+</div>
+
+<!-- PROGRESS -->
+<div class="progress-row">
+<div>Progress</div>
+<div id="progressText">1/2</div>
+</div>
+
+<div class="progress-bar">
+<div class="progress-fill" id="progressFill"></div>
+</div>
+
+<!-- SCREEN 1 -->
+<div class="screen show" id="q1">
+
+<h1>What would you spend your reward on?</h1>
+
+<div class="option" onclick="next(1)">
+Clothes
+<span class="arrow">›</span>
+</div>
+
+<div class="option" onclick="next(1)">
+Vacation
+<span class="arrow">›</span>
+</div>
+
+<div class="option" onclick="next(1)">
+Family & Friends
+<span class="arrow">›</span>
+</div>
+
+<div class="option" onclick="next(1)">
+Other
+<span class="arrow">›</span>
+</div>
+
+</div>
+
+<!-- SCREEN 2 -->
+<div class="screen" id="q2">
+
+<h1>Are you 18 years of age or older?</h1>
+
+<div class="option" onclick="next(2)">
+Yes, I am
+<span class="arrow">›</span>
+</div>
+
+<div class="option" onclick="next(2)">
+No, I'm not
+<span class="arrow">›</span>
+</div>
+
+</div>
+
+<!-- LOADING -->
+<div class="screen center" id="loading">
+
+<div class="loader"></div>
+
+<h2 style="color:#777">Checking your eligibility...</h2>
+<p style="color:#999">This will only take a moment</p>
+
+</div>
+
+<!-- ELIGIBLE -->
+<div class="screen center" id="eligible">
+
+<div class="check">✓</div>
+
+<h1 class="green">You're Eligible!</h1>
+
+<p style="color:#666;font-size:18px;">
+Great news — your Revolut £500 reward is reserved.
+</p>
+
+</div>
+
+<!-- FINAL -->
+<div class="screen" id="final">
+
+<h1>Almost There!</h1>
+<p style="color:#777;font-size:18px;margin-bottom:20px;">
+Follow these simple steps to claim your reward.
+</p>
+
+<div class="card">
+
+<div class="step">
+<div class="icon">✉️</div>
+<div>
+<strong>Provide a valid email address</strong><br>
+<span style="color:#777;">For notifications and rewards</span>
+</div>
+</div>
+
+<div class="step">
+<div class="icon">💲</div>
+<div>
+<strong>Complete 3-5 deals</strong><br>
+<span style="color:#777;">The more you do, the more you earn</span>
+</div>
+</div>
+
+<div class="step">
+<div class="icon">🎁</div>
+<div>
+<strong>Claim Reward & Repeat</strong><br>
+<span style="color:#777;">Enjoy your reward</span>
+</div>
+</div>
+
+</div>
+
+<button class="btn" onclick="redirect()">
+Get Started →
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+const fill = document.getElementById("progressFill");
+const text = document.getElementById("progressText");
+
+function next(step){
+
+if(step === 1){
+document.getElementById("q1").classList.remove("show");
+document.getElementById("q2").classList.add("show");
+
+fill.style.width = "50%";
+text.innerText = "2/2";
+}
+
+if(step === 2){
+
+document.getElementById("q2").classList.remove("show");
+document.getElementById("loading").classList.add("show");
+
+fill.style.width = "100%";
+text.innerText = "2/2";
+
+setTimeout(()=>{
+document.getElementById("loading").classList.remove("show");
+document.getElementById("eligible").classList.add("show");
+
+
+// ✅ AUTO LOAD FINAL PAGE AFTER APPROVAL
+setTimeout(showFinal,1500);
+
+
+},2000);
+
+}
+
+}
+
+function showFinal(){
+document.getElementById("eligible").classList.remove("show");
+document.getElementById("final").classList.add("show");
+}
+
+function redirect(){
+window.location.href = "https://ftblltrck.com/?oex3=4KR0h%2bj%2bxDn4R3gsHUo5aFve3g%2b9lYOevQJDRoz7h5U%3d&s1=ab";
+}
+
+</script>
+
+</body>
+</html>
