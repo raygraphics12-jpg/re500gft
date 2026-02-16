@@ -22,7 +22,7 @@ color:#111;
 .wrapper{
 max-width:420px;
 margin:auto;
-padding:16px; /* Reduced from 24px */
+padding:16px; 
 min-height:100vh;
 display:flex;
 flex-direction:column;
@@ -30,7 +30,7 @@ justify-content:flex-start;
 }
 
 .logo-img{
-width:65px; /* Reduced from 90px */
+width:65px; 
 height:65px;
 border-radius:50%;
 object-fit:cover;
@@ -42,7 +42,7 @@ margin:0 auto 6px;
 
 .logo{
 text-align:center;
-margin-bottom:10px; /* Reduced from 14px */
+margin-bottom:10px; 
 }
 
 .logo-circle{
@@ -70,13 +70,13 @@ color:#888;
 .progress-row{
 display:flex;
 justify-content:space-between;
-margin-top:10px; /* Reduced from 25px */
+margin-top:10px; 
 font-size:14px;
 color:#777;
 }
 
 .progress-bar{
-height:8px; /* Reduced from 10px */
+height:8px; 
 background:#ddd;
 border-radius:10px;
 margin-top:8px;
@@ -94,8 +94,8 @@ transition:width .4s ease;
 /* Headings */
 
 h1{
-font-size:24px; /* Reduced from 28px */
-margin:15px 0 10px; /* Reduced from 30px 0 20px */
+font-size:24px; 
+margin:15px 0 10px; 
 line-height:1.25;
 }
 
@@ -104,12 +104,12 @@ line-height:1.25;
 .option{
 background:#eaeaea;
 border-radius:18px;
-padding:16px; /* Reduced from 20px */
+padding:16px; 
 margin-bottom:14px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-font-size:16px; /* Reduced from 18px */
+font-size:16px; 
 cursor:pointer;
 border:2px solid transparent;
 }
@@ -128,7 +128,7 @@ opacity:.4;
 
 .center{
 text-align:center;
-margin-top:60px; /* Reduced from 80px */
+margin-top:60px; 
 }
 
 .loader{
@@ -169,35 +169,35 @@ color:#18a870;
 .card{
 background:#e9e9e9;
 border-radius:16px;
-padding:16px; /* Reduced from 22px */
-margin:12px 0; /* Reduced from 20px 0 */
+padding:16px; 
+margin:12px 0; 
 }
 
 .step{
 display:flex;
-gap:12px; /* Reduced from 14px */
-margin-bottom:14px; /* Reduced from 18px */
+gap:12px; 
+margin-bottom:14px; 
 align-items: center;
 }
 
 .step:last-child {
-margin-bottom: 0; /* Ensures no extra dead space at the bottom of the card */
+margin-bottom: 0; 
 }
 
 .icon{
-width:40px; /* Reduced from 46px */
+width:40px; 
 height:40px;
 border-radius:50%;
 background:#fff;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:18px; /* Reduced from 20px */
+font-size:18px; 
 flex-shrink: 0;
 }
 
 .step-text {
-font-size: 15px; /* Slight scale down to prevent text wrapping on small screens */
+font-size: 15px; 
 }
 
 /* Button */
@@ -207,21 +207,25 @@ background:#000;
 color:#fff;
 border:none;
 border-radius:30px;
-padding:16px; /* Reduced from 20px */
-font-size:18px; /* Reduced from 20px */
+padding:16px; 
+font-size:18px; 
 width:100%;
 cursor:pointer;
-margin-top:12px; /* Reduced from 20px */
+/* Magic trick below: Automatically pushes the button to the bottom */
+margin-top:auto; 
 }
 
-/* Hide */
+/* Hide / Show Modifiers */
 
 .screen{
 display:none;
 }
 
 .show{
-display:block;
+/* Changed to a flex column so the screen fills the remaining height */
+display:flex;
+flex-direction: column;
+flex: 1; 
 }
 
 </style>
