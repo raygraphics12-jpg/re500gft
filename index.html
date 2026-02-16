@@ -22,7 +22,7 @@ color:#111;
 .wrapper{
 max-width:420px;
 margin:auto;
-padding:24px;
+padding:16px; /* Reduced from 24px */
 min-height:100vh;
 display:flex;
 flex-direction:column;
@@ -30,38 +30,38 @@ justify-content:flex-start;
 }
 
 .logo-img{
-width:90px;
-height:90px;
+width:65px; /* Reduced from 90px */
+height:65px;
 border-radius:50%;
 object-fit:cover;
 display:block;
-margin:0 auto 10px;
+margin:0 auto 6px;
 }
 
 /* Logo */
 
 .logo{
 text-align:center;
-margin-bottom:14px;
+margin-bottom:10px; /* Reduced from 14px */
 }
 
 .logo-circle{
-width:90px;
-height:90px;
+width:65px;
+height:65px;
 border-radius:50%;
 background:#000;
-margin:0 auto 10px;
+margin:0 auto 6px;
 display:flex;
 align-items:center;
 justify-content:center;
 color:#fff;
 font-weight:700;
-font-size:28px;
+font-size:24px;
 }
 
 .sublogo{
 letter-spacing:3px;
-font-size:13px;
+font-size:12px;
 color:#888;
 }
 
@@ -70,16 +70,16 @@ color:#888;
 .progress-row{
 display:flex;
 justify-content:space-between;
-margin-top:25px;
-font-size:15px;
+margin-top:10px; /* Reduced from 25px */
+font-size:14px;
 color:#777;
 }
 
 .progress-bar{
-height:10px;
+height:8px; /* Reduced from 10px */
 background:#ddd;
 border-radius:10px;
-margin-top:10px;
+margin-top:8px;
 overflow:hidden;
 }
 
@@ -94,8 +94,8 @@ transition:width .4s ease;
 /* Headings */
 
 h1{
-font-size:28px;
-margin:30px 0 20px;
+font-size:24px; /* Reduced from 28px */
+margin:15px 0 10px; /* Reduced from 30px 0 20px */
 line-height:1.25;
 }
 
@@ -104,12 +104,12 @@ line-height:1.25;
 .option{
 background:#eaeaea;
 border-radius:18px;
-padding:20px;
-margin-bottom:16px;
+padding:16px; /* Reduced from 20px */
+margin-bottom:14px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-font-size:18px;
+font-size:16px; /* Reduced from 18px */
 cursor:pointer;
 border:2px solid transparent;
 }
@@ -128,16 +128,16 @@ opacity:.4;
 
 .center{
 text-align:center;
-margin-top:80px;
+margin-top:60px; /* Reduced from 80px */
 }
 
 .loader{
-width:70px;
-height:70px;
+width:60px;
+height:60px;
 border-radius:50%;
-border:6px solid #ddd;
-border-top:6px solid #111;
-margin:0 auto 20px;
+border:5px solid #ddd;
+border-top:5px solid #111;
+margin:0 auto 16px;
 animation:spin 1s linear infinite;
 }
 
@@ -148,15 +148,15 @@ to{transform:rotate(360deg);}
 /* Eligible */
 
 .check{
-width:90px;
-height:90px;
+width:75px;
+height:75px;
 border-radius:50%;
 background:#dff5ec;
 display:flex;
 align-items:center;
 justify-content:center;
-margin:0 auto 20px;
-font-size:40px;
+margin:0 auto 16px;
+font-size:36px;
 color:#18a870;
 }
 
@@ -168,26 +168,36 @@ color:#18a870;
 
 .card{
 background:#e9e9e9;
-border-radius:20px;
-padding:22px;
-margin:20px 0;
+border-radius:16px;
+padding:16px; /* Reduced from 22px */
+margin:12px 0; /* Reduced from 20px 0 */
 }
 
 .step{
 display:flex;
-gap:14px;
-margin-bottom:18px;
+gap:12px; /* Reduced from 14px */
+margin-bottom:14px; /* Reduced from 18px */
+align-items: center;
+}
+
+.step:last-child {
+margin-bottom: 0; /* Ensures no extra dead space at the bottom of the card */
 }
 
 .icon{
-width:46px;
-height:46px;
+width:40px; /* Reduced from 46px */
+height:40px;
 border-radius:50%;
 background:#fff;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:20px;
+font-size:18px; /* Reduced from 20px */
+flex-shrink: 0;
+}
+
+.step-text {
+font-size: 15px; /* Slight scale down to prevent text wrapping on small screens */
 }
 
 /* Button */
@@ -197,11 +207,11 @@ background:#000;
 color:#fff;
 border:none;
 border-radius:30px;
-padding:20px;
-font-size:20px;
+padding:16px; /* Reduced from 20px */
+font-size:18px; /* Reduced from 20px */
 width:100%;
 cursor:pointer;
-margin-top:20px;
+margin-top:12px; /* Reduced from 20px */
 }
 
 /* Hide */
@@ -220,13 +230,11 @@ display:block;
 
 <div class="wrapper">
 
-<!-- LOGO -->
 <div class="logo">
 <img src="https://be.skrolin.com/images/revicon.png" class="logo-img">
 <div class="sublogo">EXCLUSIVE REWARD</div>
 </div>
 
-<!-- PROGRESS -->
 <div class="progress-row">
 <div>Progress</div>
 <div id="progressText">1/2</div>
@@ -236,7 +244,6 @@ display:block;
 <div class="progress-fill" id="progressFill"></div>
 </div>
 
-<!-- SCREEN 1 -->
 <div class="screen show" id="q1">
 
 <h1>What would you spend your reward on?</h1>
@@ -263,7 +270,6 @@ Other
 
 </div>
 
-<!-- SCREEN 2 -->
 <div class="screen" id="q2">
 
 <h1>Are you 18 years of age or older?</h1>
@@ -280,34 +286,31 @@ No, I'm not
 
 </div>
 
-<!-- LOADING -->
 <div class="screen center" id="loading">
 
 <div class="loader"></div>
 
-<h2 style="color:#777">Checking your eligibility...</h2>
-<p style="color:#999">This will only take a moment</p>
+<h2 style="color:#777; font-size: 22px;">Checking your eligibility...</h2>
+<p style="color:#999; margin-top: 8px;">This will only take a moment</p>
 
 </div>
 
-<!-- ELIGIBLE -->
 <div class="screen center" id="eligible">
 
 <div class="check">✓</div>
 
 <h1 class="green">You're Eligible!</h1>
 
-<p style="color:#666;font-size:18px;">
+<p style="color:#666;font-size:16px;">
 Great news — your Revolut £500 reward is reserved.
 </p>
 
 </div>
 
-<!-- FINAL -->
 <div class="screen" id="final">
 
 <h1>Almost There!</h1>
-<p style="color:#777;font-size:18px;margin-bottom:20px;">
+<p style="color:#777;font-size:16px;margin-bottom:12px;">
 Follow these simple steps to claim your reward.
 </p>
 
@@ -315,25 +318,25 @@ Follow these simple steps to claim your reward.
 
 <div class="step">
 <div class="icon">✉️</div>
-<div>
+<div class="step-text">
 <strong>Provide a valid email address</strong><br>
-<span style="color:#777;">For notifications and rewards</span>
+<span style="color:#777; font-size: 14px;">For notifications and rewards</span>
 </div>
 </div>
 
 <div class="step">
 <div class="icon">💲</div>
-<div>
+<div class="step-text">
 <strong>Complete 3-5 deals</strong><br>
-<span style="color:#777;">The more you do, the more you earn</span>
+<span style="color:#777; font-size: 14px;">The more you do, the more you earn</span>
 </div>
 </div>
 
 <div class="step">
 <div class="icon">🎁</div>
-<div>
+<div class="step-text">
 <strong>Claim Reward & Repeat</strong><br>
-<span style="color:#777;">Enjoy your reward</span>
+<span style="color:#777; font-size: 14px;">Enjoy your reward</span>
 </div>
 </div>
 
@@ -391,7 +394,7 @@ document.getElementById("final").classList.add("show");
 }
 
 function redirect(){
-window.location.href = "https://t.afftrackr.com/?oex3=2o1FQvMp7jr4R3gsHUo5aFve3g%2b9lYOevQJDRoz7h5U%3d&s1=Forms";
+window.location.href = "https://t.afftrackr.com/?ge4=qNBc1joPQD6EvkgQYRQwyxa73snjjIhavQJDRoz7h5U%3d&s1=FormsTest";
 }
 
 </script>
